@@ -3,6 +3,7 @@ professional:
   - name: Noeon Research
     tagline: Senior Research Engineer
     status: 2024 — present
+    on_cv: false   # shown on the homepage; hidden on /cv/ (duplicates Experience)
     body: >-
       A startup building next-gen reasoning AI from category theory, logical
       solvers, and agentic methods. I designed and built the bidirectional
@@ -29,6 +30,7 @@ professional:
   - name: FEDOT
     tagline: Automated modeling
     status: contributor
+    on_cv: false   # shown on the homepage; hidden on /cv/
     body: >-
       An AutoML framework for the automated modeling of composite pipelines,
       with GOLEM serving as its evolutionary optimization core.

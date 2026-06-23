@@ -1,0 +1,374 @@
+/* ============================================================================
+   Printable CV — gkirgizov.github.io/cv/
+   ----------------------------------------------------------------------------
+   Self-contained, light, print-first. Deliberately does NOT load the site's
+   dark-theme tokens: the screen view and the exported PDF must look identical,
+   so everything here is plain white background + warm ink. Renders from the
+   same _data as the homepage; this file only styles a subset of that content.
+   ========================================================================== */
+
+:root {
+  --serif: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono:  'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --ink:         #201d1a;  /* headings / strong text       */
+  --body:        #322e29;  /* body copy                    */
+  --muted:       #5b544c;  /* secondary copy               */
+  --subtle:      #8b8278;  /* meta, periods, labels        */
+  --accent:      #8a5a2b;  /* warm brown — labels & links  */
+  --line:        #e6e0d6;  /* hairlines                    */
+  --line-strong: #cfc8bb;
+  --bg:          #ffffff;  /* the page / sheet             */
+  --canvas:      #f5f3ee;  /* screen backdrop behind sheet */
+
+  --research:    #8a5a2b;
+  --engineering: #4a6a55;
+  --art:         #9a4f2a;
+  --education:   #6a6a6a;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-family: var(--sans);
+  color: var(--body);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+ul, ol, dl { margin: 0; padding: 0; list-style: none; }
+dd { margin: 0; }
+h1, h2, h3, p { margin: 0; }
+
+/* ── Screen-only toolbar ──────────────────────────────────────────────────── */
+.toolbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem clamp(1rem, 4vw, 2rem);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+.toolbar__back { color: var(--muted); font-weight: 500; }
+.toolbar__back:hover { color: var(--ink); }
+.toolbar__print {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.toolbar__print:hover { transform: translateY(-1px); opacity: 0.9; }
+
+/* ── The sheet ────────────────────────────────────────────────────────────── */
+.sheet {
+  max-width: 50rem;
+  margin: 4.5rem auto 3rem;
+  padding: clamp(1.6rem, 5vw, 3.2rem);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(40, 33, 20, 0.04), 0 16px 40px rgba(40, 33, 20, 0.07);
+}
+
+/* ── Section scaffolding ──────────────────────────────────────────────────── */
+.cv-sec { margin-top: 1.7rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.cv-h2 {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+.cv-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(1.2rem, 4vw, 2.4rem);
+  align-items: start;
+}
+.cv-name {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.cv-role {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 0.55rem;
+}
+.cv-summary {
+  margin-top: 0.9rem;
+  max-width: 52ch;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.cv-summary strong { color: var(--ink); font-weight: 600; }
+.cv-avail {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--subtle);
+}
+
+.cv-contact {
+  display: grid;
+  gap: 0.34rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.cv-contact li { display: grid; grid-template-columns: 4.6rem 1fr; gap: 0.6rem; }
+.cv-contact__k { color: var(--subtle); }
+.cv-contact a { color: var(--body); }
+.cv-contact a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── Skills ───────────────────────────────────────────────────────────────── */
+.cv-skills { display: grid; gap: 0.5rem; }
+.cv-skills__row { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0.9rem; align-items: baseline; }
+.cv-skills__row dt {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  padding-top: 0.05rem;
+}
+.cv-skills__row dd { font-size: 0.9rem; color: var(--body); }
+.cv-skills__also {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── Experience ───────────────────────────────────────────────────────────── */
+/* Float (not grid) so an entry fragments cleanly across a printed page break
+   instead of jumping to the next page and leaving a gap. The aside is short and
+   stays put; the main column flows. */
+.cv-entry {
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--line);
+}
+.cv-entry::after { content: ""; display: block; clear: both; }
+.cv-entry:first-of-type { border-top: 0; padding-top: 0; }
+.cv-entry__aside { float: left; width: 9.5rem; }
+.cv-entry__main { margin-left: 10.6rem; }
+.cv-entry__period {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--subtle);
+}
+.cv-entry__org {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-top: 0.2rem;
+}
+.cv-entry__sub { font-size: 0.78rem; color: var(--subtle); margin-top: 0.15rem; }
+.cv-entry__role {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent);
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.cv-entry__kind {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--subtle);
+}
+.cv-entry__kind--research    { color: var(--research); }
+.cv-entry__kind--engineering { color: var(--engineering); }
+.cv-entry__kind--art         { color: var(--art); }
+.cv-entry__summary { margin-top: 0.4rem; font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+.cv-list { margin-top: 0.5rem; display: grid; gap: 0.28rem; }
+.cv-list li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.87rem;
+  color: var(--body);
+  line-height: 1.45;
+}
+.cv-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 1px;
+  background: var(--accent);
+}
+.cv-entry__note { margin-top: 0.45rem; font-size: 0.8rem; font-style: italic; color: var(--subtle); }
+/* In the meta column: one link per line, wrapping long domains cleanly. */
+.cv-entry__links { margin-top: 0.5rem; font-family: var(--mono); font-size: 0.72rem; line-height: 1.5; }
+.cv-entry__links a { display: block; color: var(--accent); overflow-wrap: anywhere; }
+.cv-entry__links a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── Education ────────────────────────────────────────────────────────────── */
+.cv-edu {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 1.1rem;
+  padding: 0.4rem 0;
+}
+.cv-edu__period { font-family: var(--mono); font-size: 0.74rem; color: var(--subtle); }
+.cv-edu__body { font-size: 0.9rem; color: var(--body); }
+.cv-edu__degree { font-weight: 600; color: var(--ink); }
+.cv-edu__sub { color: var(--muted); }
+.cv-edu__body a { color: var(--accent); }
+.cv-edu__body a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── Projects ─────────────────────────────────────────────────────────────── */
+.cv-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.6rem; }
+.cv-proj { padding-top: 0.1rem; }
+.cv-proj__head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; }
+.cv-proj__name { font-family: var(--serif); font-size: 1.12rem; font-weight: 600; color: var(--ink); }
+.cv-proj__status {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  white-space: nowrap;
+}
+.cv-proj__tagline {
+  margin-top: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cv-proj__body { margin-top: 0.35rem; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+.cv-proj__link { display: inline-block; margin-top: 0.4rem; font-family: var(--mono); font-size: 0.74rem; color: var(--subtle); }
+.cv-proj__link:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── Publications ─────────────────────────────────────────────────────────── */
+.cv-pubs { display: grid; gap: 0.65rem; }
+.cv-pub { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.9rem; }
+.cv-pub__type {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 0.12rem;
+}
+.cv-pub__body { display: block; }
+.cv-pub__title { display: block; font-size: 0.9rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+a.cv-pub__title:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.cv-pub__meta { display: block; margin-top: 0.12rem; font-size: 0.78rem; color: var(--subtle); }
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.cv-foot {
+  margin-top: 1.8rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--subtle);
+}
+.cv-foot a { color: var(--accent); }
+.cv-foot a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* ============================================================================
+   Responsive (screen) — collapse the two-column blocks on narrow viewports.
+   ========================================================================== */
+/* SCREEN ONLY — must not apply to print (an A4 page is ~700px wide, so an
+   unscoped max-width:720px query would fire when printing and flatten every
+   column into one long stack). Print keeps the desktop multi-column layout. */
+@media screen and (max-width: 720px) {
+  .cv-head { grid-template-columns: 1fr; }
+  .cv-name { font-size: 2.1rem; }
+  .cv-skills__row,
+  .cv-edu,
+  .cv-pub { grid-template-columns: 1fr; gap: 0.35rem; }
+  .cv-entry__aside { float: none; width: auto; }
+  .cv-entry__main { margin-left: 0; }
+  .cv-projects { grid-template-columns: 1fr; }
+  .cv-contact { white-space: normal; }
+}
+
+/* ============================================================================
+   Print — A4, no chrome, keep entries whole. Layout otherwise identical to
+   screen so the PDF matches what the user sees.
+   ========================================================================== */
+@media print {
+  @page { size: A4; margin: 11mm 12mm; }
+  html, body { background: #fff; }
+  body { font-size: 9.3pt; line-height: 1.38; }
+
+  .toolbar { display: none; }
+  .sheet {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  a { color: inherit; }
+  .cv-entry__links a, .cv-edu__body a, .cv-proj__link:hover,
+  a.cv-pub__title, .cv-foot a { color: var(--accent); }
+
+  /* Tighten the vertical rhythm for paper. */
+  .cv-name { font-size: 23pt; }
+  .cv-summary { margin-top: 0.5rem; }
+  .cv-sec { margin-top: 10pt; padding-top: 8pt; }
+  .cv-h2 { margin-bottom: 0.5rem; }
+  .cv-entry { padding: 7pt 0; }
+  .cv-entry__summary { margin-top: 0.25rem; }
+  .cv-list { margin-top: 0.3rem; gap: 0.18rem; }
+  .cv-skills { gap: 0.35rem; }
+  .cv-skills__row { gap: 0.6rem; }
+  .cv-projects { gap: 0.6rem 1.4rem; }
+  .cv-pubs { gap: 0.45rem; }
+  .cv-foot { margin-top: 1rem; padding-top: 0.7rem; }
+
+  /* Keep short blocks whole, but let a tall Experience entry FLOW across a page
+     break rather than jump wholesale (which leaves a large gap). The aside and
+     the role line stay with the start of their entry. */
+  .cv-edu, .cv-proj, .cv-pub, .cv-skills__row { break-inside: avoid; }
+  .cv-entry__aside { break-inside: avoid; }
+  .cv-entry__role { break-after: avoid; }
+  .cv-h2 { break-after: avoid; }
+
+  /* Honour the warm ink accents in print. */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

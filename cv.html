@@ -1,0 +1,138 @@
+---
+layout: cv
+permalink: /cv/
+title: "Grigorii Kirgizov — CV"
+description: "Printable CV of Grigorii Kirgizov, AI Research Engineer — generated from the same source as gkirgizov.github.io."
+---
+{%- assign p = site.data.profile -%}
+{%- assign website = site.url | remove: 'https://' | remove: 'http://' | remove_first: '/' -%}
+
+{%- comment -%} ── Header ───────────────────────────────────────────────── {%- endcomment -%}
+<header class="cv-head">
+  <div class="cv-head__id">
+    <h1 class="cv-name">{{ p.name }}</h1>
+    <p class="cv-role">{{ p.role }}</p>
+    <p class="cv-summary">{{ p.summary }}</p>
+    {%- if p.availability and p.availability != "" %}
+    <p class="cv-avail">{{ p.availability }}</p>
+    {%- endif %}
+  </div>
+
+  <ul class="cv-contact">
+    <li><span class="cv-contact__k">Site</span><a href="{{ site.url }}">{{ website }}</a></li>
+    <li><span class="cv-contact__k">Email</span><a href="mailto:{{ p.contact.email }}">{{ p.contact.email }}</a></li>
+    <li><span class="cv-contact__k">Telegram</span><a href="{{ p.contact.telegram_url }}">t.me/{{ p.contact.telegram }}</a></li>
+    <li><span class="cv-contact__k">GitHub</span><a href="{{ p.contact.github_url }}">github.com/{{ p.contact.github }}</a></li>
+    <li><span class="cv-contact__k">X</span><a href="{{ p.contact.x_url }}">x.com/{{ p.contact.x }}</a></li>
+    <li><span class="cv-contact__k">Location</span><span>{{ p.location }}</span></li>
+  </ul>
+</header>
+
+{%- comment -%} ── Skills ───────────────────────────────────────────────── {%- endcomment -%}
+<section class="cv-sec">
+  <h2 class="cv-h2">Skills &amp; Knowledge</h2>
+  <dl class="cv-skills">
+    {%- for g in site.data.skills.groups %}
+    <div class="cv-skills__row">
+      <dt>{{ g.label }}</dt>
+      <dd>{{ g.items | join: " · " }}</dd>
+    </div>
+    {%- endfor %}
+  </dl>
+  {%- if site.data.skills.also %}
+  <p class="cv-skills__also">{{ site.data.skills.also }}</p>
+  {%- endif %}
+</section>
+
+{%- comment -%} ── Experience (timeline minus education) ────────────────── {%- endcomment -%}
+<section class="cv-sec">
+  <h2 class="cv-h2">Experience</h2>
+  {%- for e in site.data.cv.timeline %}
+  {%- if e.kind == 'education' %}{% continue %}{% endif %}
+  <article class="cv-entry">
+    <div class="cv-entry__aside">
+      <p class="cv-entry__period">{{ e.period }}</p>
+      <p class="cv-entry__org">{{ e.org }}</p>
+      {%- if e.sub %}<p class="cv-entry__sub">{{ e.sub }}</p>{%- endif %}
+      {%- if e.links and e.links.size > 0 %}
+      <p class="cv-entry__links">
+        {%- for l in e.links %}<a href="{{ l.url }}">{{ l.label }}</a>{%- endfor %}
+      </p>
+      {%- endif %}
+    </div>
+    <div class="cv-entry__main">
+      <p class="cv-entry__role">{{ e.role }}<span class="cv-entry__kind cv-entry__kind--{{ e.kind }}">{{ e.kind }}</span></p>
+      <p class="cv-entry__summary">{{ e.summary }}</p>
+      {%- if e.highlights and e.highlights.size > 0 %}
+      <ul class="cv-list">
+        {%- for h in e.highlights %}<li>{{ h }}</li>{%- endfor %}
+      </ul>
+      {%- endif %}
+      {%- if e.note %}<p class="cv-entry__note">{{ e.note }}</p>{%- endif %}
+    </div>
+  </article>
+  {%- endfor %}
+</section>
+
+{%- comment -%} ── Education (the timeline's education entries) ─────────── {%- endcomment -%}
+{%- assign education = site.data.cv.timeline | where: 'kind', 'education' -%}
+{%- if education.size > 0 %}
+<section class="cv-sec">
+  <h2 class="cv-h2">Education</h2>
+  {%- for e in education %}
+  <div class="cv-edu">
+    <p class="cv-edu__period">{{ e.period }}</p>
+    <p class="cv-edu__body">
+      <span class="cv-edu__degree">{{ e.role }}</span> ·
+      {{ e.org }}{% if e.sub %} · <span class="cv-edu__sub">{{ e.sub }}</span>{% endif %}
+      {%- if e.links and e.links.size > 0 %} · <a href="{{ e.links[0].url }}">{{ e.links[0].label }}</a>{%- endif %}
+    </p>
+  </div>
+  {%- endfor %}
+</section>
+{%- endif %}
+
+{%- comment -%} ── Selected projects ────────────────────────────────────── {%- endcomment -%}
+<section class="cv-sec">
+  <h2 class="cv-h2">Selected Projects</h2>
+  {%- assign projects = site.data.projects.professional | concat: site.data.projects.personal -%}
+  <div class="cv-projects">
+    {%- for proj in projects %}
+    {%- if proj.on_cv == false %}{% continue %}{% endif %}
+    {%- assign href = proj.repo | default: proj.url -%}
+    {%- assign hlabel = proj.repo_label | default: proj.url_label -%}
+    <article class="cv-proj">
+      <p class="cv-proj__head">
+        <span class="cv-proj__name">{{ proj.name }}</span>
+        {%- if proj.status %}<span class="cv-proj__status">{{ proj.status }}</span>{%- endif %}
+      </p>
+      <p class="cv-proj__tagline">{{ proj.tagline }}</p>
+      <p class="cv-proj__body">{{ proj.body }}</p>
+      {%- if href %}<a class="cv-proj__link" href="{{ href }}">{{ hlabel }}</a>{%- endif %}
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+{%- comment -%} ── Publications & talks ─────────────────────────────────── {%- endcomment -%}
+{%- if site.data.publications.items.size > 0 %}
+<section class="cv-sec">
+  <h2 class="cv-h2">Publications &amp; Talks</h2>
+  <ul class="cv-pubs">
+    {%- for it in site.data.publications.items %}
+    <li class="cv-pub">
+      <span class="cv-pub__type">{{ it.type }}</span>
+      <span class="cv-pub__body">
+        {%- if it.url %}<a href="{{ it.url }}" class="cv-pub__title">{{ it.title }}</a>
+        {%- else %}<span class="cv-pub__title">{{ it.title }}</span>{%- endif %}
+        <span class="cv-pub__meta">{{ it.authors }} · {{ it.venue }} · {{ it.year }}</span>
+      </span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+<footer class="cv-foot">
+  Always current at <a href="{{ site.url }}">{{ website }}</a> — this CV is generated from the same source.
+</footer>

@@ -12,7 +12,7 @@
         <a href="{{ p.contact.telegram_url }}" target="_blank" rel="noopener">{% include icon.html name="send" %} t.me/{{ p.contact.telegram }}</a>
         <a href="{{ p.contact.github_url }}" target="_blank" rel="noopener">{% include icon.html name="github" %} github.com/{{ p.contact.github }}</a>
         <a href="{{ p.contact.x_url }}" target="_blank" rel="noopener">{% include icon.html name="x" %} x.com/{{ p.contact.x }}</a>
-        <a href="{{ p.contact.cv | relative_url }}" download>{% include icon.html name="download" %} CV (PDF)</a>
+        <a href="{{ p.contact.cv | relative_url }}">{% include icon.html name="file" %} CV</a>
       </div>
     </div>
 

@@ -20,6 +20,16 @@ location: Bali, Indonesia
 contact_note: >-
   Drop me a message — if you'd like to work together, or you're just curious.
 
+# CV / résumé ─────────────────────────────────────────────────────────────────
+# Concise fields used only by the printable /cv/ page (the rich homepage uses
+# `about` / `mission` instead). Single source of truth — edit freely.
+summary: >-
+  Senior AI research engineer with <strong>10+ years</strong> across science and
+  industry. I build systems with the capacity to learn and self-improve — at the
+  intersection of agentic AI, formal methods, and evolutionary computation.
+# Optional one-liner under the summary (availability / focus). Blank = hidden.
+availability: ""
+
 # About prose ───────────────────────────────────────────────────────────────
 about:
   - >-
@@ -75,4 +85,6 @@ contact:
   github_url: https://github.com/gkirgizov
   x: SemioNomad
   x_url: https://x.com/SemioNomad
-  cv: assets/files/grigorii-kirgizov-cv.pdf
+  # The printable CV is now a page on the site (no static PDF). One knob, used
+  # by the nav / hero / footer / CV-section links.
+  cv: /cv/

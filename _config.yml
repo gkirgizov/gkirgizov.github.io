@@ -27,7 +27,6 @@ plugins:
 
 # Files that should never end up in the built site.
 exclude:
-  - "CV (AI engineer) Grigorii Kirgizov v5.pdf"
   - Gemfile
   - Gemfile.lock
   - README.md
