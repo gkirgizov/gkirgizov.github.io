@@ -12,20 +12,24 @@
   --sans:  'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --mono:  'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --ink:         #201d1a;  /* headings / strong text       */
-  --body:        #322e29;  /* body copy                    */
-  --muted:       #5b544c;  /* secondary copy               */
-  --subtle:      #8b8278;  /* meta, periods, labels        */
-  --accent:      #8a5a2b;  /* warm brown — labels & links  */
+  /* Text greys are kept dark for print legibility — meta text especially,
+     which used to wash out on weak printers. Contrast on white (approx):
+     ink ~15:1, body ~12:1, muted ~8.5:1, subtle ~6.6:1 (all clear WCAG AA),
+     while preserving the body > secondary > meta hierarchy. */
+  --ink:         #1c1916;  /* headings / strong text       */
+  --body:        #2b2722;  /* body copy                    */
+  --muted:       #4c463d;  /* secondary copy               */
+  --subtle:      #635c52;  /* meta, periods, labels        */
+  --accent:      #7c4e22;  /* warm brown — labels & links  */
   --line:        #e6e0d6;  /* hairlines                    */
   --line-strong: #cfc8bb;
   --bg:          #ffffff;  /* the page / sheet             */
   --canvas:      #f5f3ee;  /* screen backdrop behind sheet */
 
-  --research:    #8a5a2b;
-  --engineering: #4a6a55;
-  --art:         #9a4f2a;
-  --education:   #6a6a6a;
+  --research:    #7c4e22;
+  --engineering: #3e5a47;
+  --art:         #863f20;
+  --education:   #54534e;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
