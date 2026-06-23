@@ -1,0 +1,32 @@
+{%- assign p = site.data.profile -%}
+<section class="section" id="about">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="text-eyebrow section__eyebrow">About</p>
+      <h2 class="section__title">A multidisciplinary mind</h2>
+    </header>
+
+    <div class="about__prose reveal">
+      {%- for para in p.about %}
+      <p>{{ para }}</p>
+      {%- endfor %}
+    </div>
+
+    <blockquote class="pullquote reveal">
+      Looking deeper than the present — and building for the future.
+    </blockquote>
+
+    <div class="interests">
+      <p class="text-eyebrow interests__label reveal">Interested in collaborating on</p>
+      <div class="interests__grid">
+        {%- for it in p.interests %}
+        <article class="interest reveal">
+          <span class="interest__index" aria-hidden="true">{{ forloop.index | prepend: '0' }}</span>
+          <h3 class="interest__title">{{ it.title }}</h3>
+          <p class="interest__body">{{ it.body }}</p>
+        </article>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>

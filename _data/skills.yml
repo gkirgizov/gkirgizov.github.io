@@ -1,0 +1,26 @@
+# A bold lead-in shown above the skill clusters.
+intro: >-
+  I learn and use whatever is required to achieve the goal. In the AI age, any
+  problem is approachable.
+
+# Skill clusters — rendered as labelled tag groups.
+groups:
+  - label: AI &amp; Reasoning
+    items: [Agentic AI, LLM (LangGraph · LiteLLM · etc), Deep Learning, Reinforcement Learning, AutoML, Evolutionary Algorithms]
+  - label: Formal Methods
+    items: [SMT Solvers, Type Systems &amp; Semantics, Language Design (DSLs / LLVM), Compilers, Complexity Theory]
+  - label: Mathematics
+    items: [Category Theory, General Algebra, Graph Theory]
+  - label: Languages
+    items: [Python, Rust, C++, Kotlin, Java, Haskell, Prolog]
+  - label: ML &amp; Data
+    items: [PyTorch, Transformers, NN architectures, NLP, NumPy, Pandas, MediaPipe, ONNX / wasm]
+  - label: Web &amp; Product
+    items: [React, Vite, RxJS, Capacitor (iOS), Supabase, Vercel, Product &amp; GTM]
+  - label: Infra &amp; Craft
+    items: [Docker, Kafka, OpenTelemetry, Playwright, CI/CD, Architecture, Linux, git]
+
+# A short closing line of human qualities.
+also: >-
+  Teaching &amp; public-lecture experience · academic English (C2) · creative
+  &amp; product design.

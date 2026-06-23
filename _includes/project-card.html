@@ -1,0 +1,25 @@
+{%- comment -%}
+  A single project card. Usage: {% include project-card.html proj=proj %}
+  Links to a GitHub repo (proj.repo / proj.repo_label) or, failing that, a
+  website (proj.url / proj.url_label).
+{%- endcomment -%}
+{%- assign proj = include.proj -%}
+{%- assign href = proj.repo | default: proj.url -%}
+<a class="card reveal" href="{{ href }}" target="_blank" rel="noopener">
+  <div class="card__top">
+    <h3 class="card__name">{{ proj.name }}</h3>
+    {%- if proj.status %}<span class="card__status{% if proj.status contains 'live' %} card__status--live{% endif %}">{{ proj.status }}</span>{%- endif %}
+  </div>
+  <p class="card__tagline">{{ proj.tagline }}</p>
+  <p class="card__body">{{ proj.body }}</p>
+  {%- if proj.tech.size > 0 %}
+  <ul class="taglist taglist--sm">
+    {%- for t in proj.tech %}<li class="tag">{{ t }}</li>{%- endfor %}
+  </ul>
+  {%- endif %}
+  {%- if proj.repo %}
+  <span class="card__repo">{% include icon.html name="github" %} {{ proj.repo_label }}</span>
+  {%- else %}
+  <span class="card__repo">{% include icon.html name="link" %} {{ proj.url_label }}</span>
+  {%- endif %}
+</a>

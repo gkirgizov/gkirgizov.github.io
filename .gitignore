@@ -1,0 +1,13 @@
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Ruby / Bundler
+vendor/
+.bundle/
+
+# OS / editor cruft
+.DS_Store
+*.swp

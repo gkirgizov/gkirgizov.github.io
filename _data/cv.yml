@@ -1,0 +1,140 @@
+# Unified timeline — experience, art & education — reverse chronological.
+# `kind` drives the category chip + accent colour (research / engineering / art / education).
+timeline:
+  - kind: research
+    period: 2024 — Present
+    org: Noeon Research
+    sub: Reasoning-AI startup · Tokyo
+    role: Senior Research Engineer
+    summary: >-
+      High-quality R&amp;D across the company's core projects — in close
+      collaboration with researchers and engineers — at a startup building
+      next-gen reasoning AI from category theory, logical solvers, and agentic
+      methods.
+    highlights:
+      - Designed and built a bidirectional bridge between the in-house formal DSL and SMT-solver languages — including formal translation of a coroutine-like language — foundational for the system's reasoning.
+      - Ran R&amp;D on solver coverage and speed, logical-representation trade-offs, and a subsystem for complex Sudoku solving.
+      - Authored research reports and algorithm design for an ARC-AGI pipeline; built data-generation and benchmarking for the subgraph-matching algorithm.
+    tech: [Python, Rust, SMT Solvers, First-order Logic, Category Theory, Graph Theory, LLM Agents]
+    links:
+      - { label: "noeon.ai", url: "https://noeon.ai/" }
+
+  - kind: research
+    period: Feb 2022 — 2024
+    org: ITMO University
+    sub: AI in Industry Lab · Saint Petersburg
+    role: AI Research Engineer
+    summary: >-
+      Leading development of GOLEM — an AI framework for graph optimization with
+      metaheuristic methods (genetic, swarm). Driving architecture, research
+      direction, and a small research team.
+    highlights:
+      - Led a full architectural redesign of the lab's primary project and its integrations with other teams' tools.
+      - Launched GOLEM, a new framework for graph optimization, and initiated a research direction on adaptive evolution with reinforcement learning.
+      - Contributed to 3 research papers (in progress); supervised interns and MSc students; taught classes on architecture and graph optimization.
+    tech: [Python, PyTorch, Evolutionary Algorithms, Reinforcement Learning, AutoML, Graph Theory, Time-Series]
+    links:
+      - { label: "@aimclub", url: "https://github.com/aimclub/" }
+
+  - kind: art
+    period: Dec 2020 — Oct 2021
+    org: Grounding
+    sub: V.V. Dokuchaev Soil Museum · Saint Petersburg
+    role: Exhibition Curator
+    summary: >-
+      Co-curated an international exhibition of technological art dedicated to
+      soils — 28 artists, 20 art objects and installations across 2 venues,
+      3000+ visitors, ~100 media publications, and a parallel educational
+      program of 10+ events.
+    highlights:
+      - Official partner of Ars Electronica 2021.
+      - Short-listed for the Innovation 2021 state art award (best educational project).
+      - Short-listed for the Kuryokhin Award 2022 (best exhibition).
+    tech: [Management, Communication, Creative design]
+    links:
+      - { label: "groundingwith.space", url: "https://web.archive.org/web/20220121135312/https://groundingwith.space/en/" }
+
+  - kind: education
+    period: 2019 — 2021
+    org: ITMO University
+    sub: Saint Petersburg
+    role: MA in Arts, Art &amp; Science (with Honours)
+    summary: >-
+      A master's program at the intersection of contemporary art, science, and
+      technology — the ground for the multidisciplinary lens I bring to research.
+    highlights: []
+    tech: []
+    links:
+      - { label: "art.itmo.ru", url: "https://art.itmo.ru/" }
+
+  - kind: engineering
+    period: Nov 2018 — Jan 2021
+    org: JetBrains
+    sub: MPS — Meta Programming System
+    role: Software Engineer
+    summary: >-
+      R&amp;D on Coderules, a Prolog-like meta-language for declaratively
+      defining type systems inside MPS, the IDE for domain-specific languages.
+    highlights:
+      - Significantly improved the meta-language's syntax and semantics.
+      - Implemented type checkers for Java and (partially) Haskell.
+      - Built a working prototype of an incremental, language-independent type-checking engine.
+    tech: [Kotlin, Java, Prolog, Constraint Handling Rules, Type Systems, Formal Semantics]
+    links:
+      - { label: "jetbrains.com/mps", url: "https://www.jetbrains.com/mps/" }
+      - { label: "mps-coderules", url: "https://github.com/JetBrains/mps-coderules" }
+    note: >-
+      Talk — “Coderules, a new typechecking engine”, MPS Users Conference,
+      Amsterdam, Oct 2019.
+
+  - kind: research
+    period: Oct 2017 — May 2018
+    org: Saint Petersburg State University
+    sub: Bachelor Thesis
+    role: Researcher
+    summary: >-
+      Developed an embedded C-like DSL and a library for programming small-scale
+      heterogeneous microcontroller systems, working with LLVM IR and dynamic
+      code generation.
+    highlights: []
+    tech: [C++, LLVM IR, DSL, Embedded]
+    links:
+      - { label: "paper · ISP RAS", url: "https://doi.org/10.15514/ISPRAS-2018-30(4)-3" }
+
+  - kind: engineering
+    period: Jul — Aug 2017
+    org: JetBrains
+    sub: Software Intern
+    role: NLP Engineer (Intern)
+    summary: >-
+      Built an NLP framework for extracting structured information for marketing
+      research — entity extraction, web ontologies, and RNNs.
+    highlights: []
+    tech: [Python, NLP, RNNs, Ontologies]
+    links: []
+
+  - kind: research
+    period: Nov 2016 — May 2017
+    org: Raidix
+    sub: Data Science Intern
+    role: Data Scientist (Intern)
+    summary: >-
+      Improved industrial SSD caching algorithms with predictive machine
+      learning — a research article followed by product integration.
+    highlights: []
+    tech: [Machine Learning, Caching, Python]
+    links:
+      - { label: "paper · CEE-SECR", url: "https://doi.org/10.1145/3166094.3166109" }
+
+  - kind: education
+    period: 2014 — 2018
+    org: Saint Petersburg State University
+    sub: Software Engineering
+    role: BSc in Computer Science (with Honours)
+    summary: >-
+      Bachelor's in Computer Science with a strong foundation in formal systems,
+      algorithms, and software engineering.
+    highlights: []
+    tech: []
+    links:
+      - { label: "se.math.spbu.ru", url: "https://se.math.spbu.ru/" }

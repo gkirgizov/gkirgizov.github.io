@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "type": "command",
+      "name": "Jekyll Serve",
+      "program": "bundle",
+      "args": ["exec", "jekyll", "serve", "--livereload"],
+      "workingDir": "$PROJECT_DIR$",
+      "preview": {
+        "type": "web",
+        "url": "http://localhost:4000"
+      }
+    }
+  ]
+}

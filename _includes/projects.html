@@ -1,0 +1,28 @@
+<section class="section" id="projects">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="text-eyebrow section__eyebrow">Projects</p>
+      <h2 class="section__title">Things I'm building</h2>
+    </header>
+
+    {%- comment -%} ── Professional ─────────────────────────────────── {%- endcomment -%}
+    <div class="projects__stream">
+      <p class="text-eyebrow projects__stream-label reveal">Professional</p>
+      <div class="cards">
+        {%- for proj in site.data.projects.professional %}
+        {% include project-card.html proj=proj %}
+        {%- endfor %}
+      </div>
+    </div>
+
+    {%- comment -%} ── Personal ─────────────────────────────────────── {%- endcomment -%}
+    <div class="projects__stream">
+      <p class="text-eyebrow projects__stream-label reveal">Personal</p>
+      <div class="cards">
+        {%- for proj in site.data.projects.personal %}
+        {% include project-card.html proj=proj %}
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>

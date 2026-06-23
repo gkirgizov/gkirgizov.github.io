@@ -1,0 +1,74 @@
+# Projects — two streams. Each card links to a GitHub repo or a website.
+professional:
+  - name: Noeon Research
+    tagline: Senior Research Engineer
+    status: 2024 — present
+    body: >-
+      A startup building next-gen reasoning AI from category theory, logical
+      solvers, and agentic methods. I designed and built the bidirectional
+      bridge between the in-house formal DSL and SMT solvers — including formal
+      translation of a coroutine-like language, foundational for the system's
+      reasoning — and ran R&D on solver coverage and speed, ARC-AGI approaches,
+      and subgraph matching.
+    tech: [Python, Rust, SMT Solvers, Category Theory, Formal DSLs, LLM Agents]
+    url: https://noeon.ai/
+    url_label: noeon.ai
+
+  - name: GOLEM
+    tagline: Graph optimization & learning
+    status: "NeurIPS poster · GECCO '24"
+    body: >-
+      A framework for graph optimization and learning by adaptive, hybrid
+      evolutionary algorithms. Built around two ideas — universality of the
+      approach and adaptability of the algorithm — and used by several teams at
+      the ITMO AI Institute.
+    tech: [Evolutionary Algorithms, Graph Optimization, AutoML, Python]
+    repo: https://github.com/aimclub/GOLEM
+    repo_label: aimclub/GOLEM
+
+  - name: FEDOT
+    tagline: Automated modeling
+    status: contributor
+    body: >-
+      An AutoML framework for the automated modeling of composite pipelines,
+      with GOLEM serving as its evolutionary optimization core.
+    tech: [AutoML, Pipelines, Python]
+    repo: https://github.com/aimclub/FEDOT
+    repo_label: aimclub/FEDOT
+
+  - name: MPS Coderules
+    tagline: Type systems for DSLs
+    status: JetBrains
+    body: >-
+      A declarative, Prolog-like engine for defining the type systems of
+      domain-specific languages in JetBrains MPS — including a prototype for
+      incremental, language-independent type checking.
+    tech: [Type Systems, Kotlin, Constraint Handling Rules, Formal Methods]
+    repo: https://github.com/JetBrains/mps-coderules
+    repo_label: JetBrains/mps-coderules
+
+personal:
+  - name: Focus Zen
+    tagline: Attention-aware timer · Web & iOS
+    status: full product · live
+    body: >-
+      The first productivity timer that's aware of you and adapts to you — it
+      follows your focus, pulls you back from distractions, and surfaces
+      insights (and, I'd argue, it's the most aesthetic timer out there). Built
+      on a research-informed attention-tracking state machine with custom
+      gaze-tracking and brush-drawing. Solo, end-to-end: idea, research,
+      engineering, product, landing, and go-to-market.
+    tech: [React, Vite, RxJS, Capacitor (iOS), MediaPipe, ONNX / wasm, Supabase, Playwright]
+    url: https://www.focuszen.io/
+    url_label: focuszen.io
+
+  - name: Distributed Intelligence Environment
+    tagline: DIE · artificial life
+    status: 2022
+    body: >-
+      An artificial-life project reproducing the emergence of distributed
+      intelligence under environmental pressures, using neural cellular automata
+      grounded in Evolution, Reinforcement Learning, and Active Inference.
+    tech: [Artificial Life, Neural CA, Active Inference, RL]
+    repo: https://github.com/gkirgizov/die
+    repo_label: gkirgizov/die

@@ -1,0 +1,78 @@
+# Hero / identity ─────────────────────────────────────────────────────────────
+name: Grigorii Kirgizov
+short_name: Gregory
+role: AI Research Engineer
+monogram: GK
+
+# Drop a square image at assets/img/avatar.jpg and it appears automatically.
+# Until then, the monogram mark is shown instead.
+avatar: assets/img/avatar.jpg
+
+# The logline — the first statement visitors read.
+mission: >-
+  My ongoing interest is devoted to building systems with the capacity to
+  self-improve. Technology must be alive and communicable. Wide expertise from
+  <strong>10+ years</strong> across science &amp; industry. Let's chat.
+
+location: Bali, Indonesia
+
+# A warm lead-in shown just above the contact buttons.
+contact_note: >-
+  Drop me a message — if you'd like to work together, or you're just curious.
+
+# About prose ───────────────────────────────────────────────────────────────
+about:
+  - >-
+    I'm an AI Research Engineer with a builder's attitude and broad expertise
+    from <strong>10+ years</strong> of experience. My ongoing interest is
+    devoted to building systems with the capacity to learn and self-improve.
+  - >-
+    Since 2016 I've worked in R&amp;D across academia and industry — a
+    university lab, a couple of hardcore tech companies, and now a
+    research-centric startup pursuing next-gen AI that combines category theory,
+    logical solvers, and agentic reasoning. My knowledge spans formal Computer
+    Science (programming languages, translators, type systems), classic ML (you
+    name it), and modern agentic AI. I have several publications from
+    interdisciplinary scientific collaborations, plus ongoing side projects.
+  - >-
+    I've also had a period of contemporary-art practice — several acclaimed
+    interactive-media works and a city-scale exhibition I co-curated, with
+    3000+ visitors and wide media coverage. That chapter shaped my creative
+    approach to exploring and testing ideas.
+  - >-
+    I travel a lot. In my spare time I study classical Sanskrit, practice
+    Vipassana meditation, and prototype new product and research ideas.
+
+# Things I'd like to collaborate on ──────────────────────────────────────────
+interests:
+  - title: Agentic AI Systems
+    body: >-
+      Today's agentic systems are largely ad-hoc engineering. LLMs are fuzzy, so
+      building reliable agents — and multi-agent systems — is genuinely hard, and
+      the research is only catching up. Much of it rediscovers old lessons from
+      distributed computing and cybernetics. It's the right moment to build real
+      foundations for scalable agentic systems.
+  - title: Language-centric Projects
+    body: >-
+      Custom DSLs and the evolution of languages. A task-specific language can be
+      surprisingly effective — it carves out a much narrower search space. Most of
+      my work rotates around this, and I've seen its power firsthand: a frontier
+      joining formal methods with the strength of LLMs, while staying close to
+      applications — from biology to legal to anything else.
+  - title: Hybrid AI Approaches
+    body: >-
+      Neurosymbolic AI, evolutionary AI, novel architectures. AI waves supersede
+      and reinforce one another — RL applied to Transformers is what brought us
+      agentic systems. That pattern will repeat, and there's a trove of techniques
+      and insights still to be combined. Excellent research territory.
+
+# Contact ────────────────────────────────────────────────────────────────────
+contact:
+  email: gkirgizov@gmail.com
+  telegram: jregory
+  telegram_url: https://t.me/jregory
+  github: gkirgizov
+  github_url: https://github.com/gkirgizov
+  x: SemioNomad
+  x_url: https://x.com/SemioNomad
+  cv: assets/files/grigorii-kirgizov-cv.pdf

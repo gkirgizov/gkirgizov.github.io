@@ -1,0 +1,40 @@
+# ── Site ────────────────────────────────────────────────────────────────────
+title: Grigorii Kirgizov
+tagline: AI Research Engineer
+description: >-
+  Grigorii Kirgizov — senior AI research engineer working on hybrid
+  intelligence: neural, metaheuristic and formal methods, with a mission
+  aligned with the planet and society.
+url: "https://gkirgizov.github.io"
+baseurl: ""
+lang: en
+timezone: Asia/Makassar
+
+author:
+  name: Grigorii Kirgizov
+  email: gkirgizov@gmail.com
+
+# ── Build ───────────────────────────────────────────────────────────────────
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Files that should never end up in the built site.
+exclude:
+  - "CV (AI engineer) Grigorii Kirgizov v5.pdf"
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor
+  - .github
+  - .sass-cache
+  - .jekyll-cache
+  - "*.gem"
+  - node_modules

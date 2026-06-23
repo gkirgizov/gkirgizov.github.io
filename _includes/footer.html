@@ -1,0 +1,24 @@
+{%- assign p = site.data.profile -%}
+<footer class="footer" id="contact">
+  <div class="container footer__inner">
+    <div class="footer__lead reveal">
+      <p class="text-eyebrow footer__eyebrow">Let's talk</p>
+      <p class="footer__line">
+        If any of this resonates, I'd like to chat — I'm always looking for
+        fellow futurists and visionaries.
+      </p>
+      <div class="footer__links">
+        <a href="mailto:{{ p.contact.email }}">{% include icon.html name="mail" %} {{ p.contact.email }}</a>
+        <a href="{{ p.contact.telegram_url }}" target="_blank" rel="noopener">{% include icon.html name="send" %} t.me/{{ p.contact.telegram }}</a>
+        <a href="{{ p.contact.github_url }}" target="_blank" rel="noopener">{% include icon.html name="github" %} github.com/{{ p.contact.github }}</a>
+        <a href="{{ p.contact.x_url }}" target="_blank" rel="noopener">{% include icon.html name="x" %} x.com/{{ p.contact.x }}</a>
+        <a href="{{ p.contact.cv | relative_url }}" download>{% include icon.html name="download" %} CV (PDF)</a>
+      </div>
+    </div>
+
+    <div class="footer__base">
+      <span class="footer__loc">{{ p.location }}</span>
+      <span class="footer__copy">© {{ site.time | date: '%Y' }} {{ p.name }}</span>
+    </div>
+  </div>
+</footer>

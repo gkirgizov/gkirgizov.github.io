@@ -1,0 +1,36 @@
+# Publications & talks — reverse chronological (newest first).
+items:
+  - type: Poster
+    authors: N. Gubina, A. Dmitrenko, G. Solovev, L. Yamshchikova, O. Petrov, I. Lebedev, N. Serov, G. Kirgizov, N. Nikitin, V. Vinogradov
+    title: Hybrid Generative AI for De Novo Design of Co-Crystals with Enhanced Tabletability
+    venue: NeurIPS
+    year: 2024
+    url: https://openreview.net/forum?id=G4vFNmraxj
+
+  - type: Paper
+    authors: M. Pinchuk, G. Kirgizov, L. Yamshchikova, N. Nikitin, I. Deeva, K. Shakhkyan, I. Borisov, K. Zharkov, A. Kalyuzhnaya
+    title: "GOLEM: Flexible Evolutionary Design of Graph Representations of Physical and Digital Objects"
+    venue: GECCO Companion
+    year: 2024
+    url: https://doi.org/10.1145/3638530.3664141
+
+  - type: Talk
+    authors: G. Kirgizov
+    title: "Coderules, a new typechecking engine"
+    venue: MPS Users Conference, Amsterdam
+    year: 2019
+    url:
+
+  - type: Paper
+    authors: G. V. Kirgizov, I. A. Kirilenko
+    title: Heterogeneous Architectures Programming Library
+    venue: ISP RAS Proceedings, Vol. 30(4), pp. 45–62
+    year: 2018
+    url: https://doi.org/10.15514/ISPRAS-2018-30(4)-3
+
+  - type: Paper
+    authors: S. Lazareva, G. Kirgizov, R. Ragimov
+    title: "Smart face control: machine learning algorithms for efficient SSD caching"
+    venue: CEE-SECR '17, ACM
+    year: 2017
+    url: https://doi.org/10.1145/3166094.3166109

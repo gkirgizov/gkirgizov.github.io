@@ -1,0 +1,88 @@
+{%- assign p = site.data.profile -%}
+<section class="section section--alt" id="cv">
+  <div class="container">
+    <header class="section__head section__head--row reveal">
+      <div>
+        <p class="text-eyebrow section__eyebrow">Curriculum Vitae</p>
+        <h2 class="section__title">The path so far</h2>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="{{ p.contact.cv | relative_url }}" download>
+        {% include icon.html name="download" %} Full CV (PDF)
+      </a>
+    </header>
+
+    {%- comment -%} ── Skills ─────────────────────────────────────────── {%- endcomment -%}
+    <div class="skills reveal">
+      {%- if site.data.skills.intro %}
+      <p class="skills__intro">{{ site.data.skills.intro }}</p>
+      {%- endif %}
+      <div class="skills__grid">
+        {%- for g in site.data.skills.groups %}
+        <div class="skills__group">
+          <p class="skills__label">{{ g.label }}</p>
+          <ul class="taglist">
+            {%- for item in g.items %}<li class="tag">{{ item }}</li>{%- endfor %}
+          </ul>
+        </div>
+        {%- endfor %}
+      </div>
+      <p class="skills__also">{{ site.data.skills.also }}</p>
+    </div>
+
+    {%- comment -%} ── Timeline ──────────────────────────────────────── {%- endcomment -%}
+    <ol class="tl">
+      {%- for e in site.data.cv.timeline %}
+      <li class="tl__item reveal" data-kind="{{ e.kind }}">
+        <span class="tl__dot" aria-hidden="true"></span>
+        <div class="tl__body">
+          <div class="tl__meta">
+            <span class="tl__period">{{ e.period }}</span>
+            <span class="chip chip--{{ e.kind }}">{{ e.kind | capitalize }}</span>
+          </div>
+          <h3 class="tl__org">{{ e.org }}</h3>
+          {%- if e.sub %}<p class="tl__sub">{{ e.sub }}</p>{%- endif %}
+          <p class="tl__role">{{ e.role }}</p>
+          <p class="tl__summary">{{ e.summary }}</p>
+          {%- if e.highlights.size > 0 %}
+          <ul class="tl__highlights">
+            {%- for h in e.highlights %}<li>{{ h }}</li>{%- endfor %}
+          </ul>
+          {%- endif %}
+          {%- if e.tech.size > 0 %}
+          <ul class="taglist taglist--sm">
+            {%- for t in e.tech %}<li class="tag">{{ t }}</li>{%- endfor %}
+          </ul>
+          {%- endif %}
+          {%- if e.links.size > 0 %}
+          <p class="tl__links">
+            {%- for l in e.links %}
+            <a href="{{ l.url }}" target="_blank" rel="noopener">{% include icon.html name="link" %} {{ l.label }}</a>
+            {%- endfor %}
+          </p>
+          {%- endif %}
+          {%- if e.note %}<p class="tl__note">{{ e.note }}</p>{%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+
+    {%- comment -%} ── Publications & talks ──────────────────────────── {%- endcomment -%}
+    <div class="pubs">
+      <p class="text-eyebrow pubs__label reveal">Publications &amp; Talks</p>
+      <ul class="pubs__list">
+        {%- for it in site.data.publications.items %}
+        <li class="pub reveal">
+          <span class="pub__type">{{ it.type }}</span>
+          <div class="pub__body">
+            <p class="pub__title">
+              {%- if it.url %}<a href="{{ it.url }}" target="_blank" rel="noopener">{{ it.title }} {% include icon.html name="arrow" %}</a>
+              {%- else %}{{ it.title }}{%- endif %}
+            </p>
+            <p class="pub__meta">{{ it.authors }} · {{ it.venue }} · {{ it.year }}</p>
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
