@@ -64,6 +64,38 @@ personal:
     url: https://www.focuszen.io/
     url_label: focuszen.io
 
+  - name: clarc
+    tagline: Contract-learning for ARC-AGI
+    status: research solver
+    body: >-
+      A neurosymbolic ARC-AGI solver that wraps Poetiq's record-setting
+      refinement loop in a machine-checkable layer: a typed DSL paired with z3
+      contracts over an abstract grid domain, sound by construction. Candidate
+      programs are refuted before they ever run — 99.4% refutation power, zero
+      false refutations across 13,641 checks — and an LLM-free synthesizer grows
+      its own DSL to solve tasks with no model call at all. Verified invariants
+      cut the median iterations-to-solve from 8 to 3, at zero harm.
+    tech: [Python, z3 / SMT, CEGIS, Typed DSL, Neurosymbolic, LLM Agents]
+    repo: https://github.com/gkirgizov/poetiq-arc-agi-solver
+    repo_label: gkirgizov/poetiq-arc-agi-solver
+
+  - name: Arbitrage Graph
+    tagline: Crypto market microstructure
+    status: agentic R&D
+    body: >-
+      An autonomous R&D program that mines crypto-market microstructure for
+      tradeable edges: a real-time arbitrage-graph engine feeding an agentic
+      research loop that tests falsifiable hypotheses against live cross-market
+      data and graduates the survivors toward execution (testnet → live). The
+      founding premise — risk-free negative cycles — proved productively wrong
+      (all stale-quote artifacts), and the meta-finding is sharp: every
+      retail-scale micro-edge is real but sub-fee. One survivor cleared the
+      bar — the tokenized-gold basis, a market-neutral spread uncorrelated with
+      BTC, gold, and USDT stress.
+    tech: [Python, rustworkx, Market Microstructure, Nautilus Trader, LLM Agents, Next.js]
+    repo: https://github.com/gkirgizov/arbitrage-graph
+    repo_label: gkirgizov/arbitrage-graph
+
   - name: Distributed Intelligence Environment
     tagline: DIE · artificial life
     status: 2022
